@@ -1,0 +1,37 @@
+# > ruby -e 'p "Hello, World!".chars.map{|c|c.ord}'
+# [72, 101, 108, 108, 111, 44, 32, 87, 111, 114, 108, 100, 33]
+# > ruby -e 'p "Hello, World!".chars.map{|c|c.ord.to_s(2)}'
+# ["1001000", "1100101", "1101100", "1101100", "1101111", "101100", "100000", "1010111", "1101111", "1110010", "1101100", "1100100", "100001"]
+# 1001000
+# 1100101
+# 1101100
+# 1101100
+# 1101111
+# 101100
+# 100000
+# 1010111
+# 1101111
+# 1110010
+# 1101100
+# 1100100
+# 100001
+SS S L # Put 0(=null)
+SS TSSSST  L # Put 33(=!)
+SS TTSSTSS L # Put 100(=d)
+SS TTSTTSS L # Put 108(=l)
+SS TTTSSTS L # Put 114(=r)
+SS TTSTTTT L # Put 111(=o)
+SS TSTSTTT L # Put 87(=W)
+SS TSSSSS L  # Put 32(= )
+SS TSTTSS L  # Put 44(=,)
+SS TTSTTTT L # Put 111(=o)
+SS TTSTTSS L # Put 108(=l)
+SS TTSTTSS L # Put 108(=l)
+SS TTSSTST L # Put 101(=e)
+SS TSSTSSS L # Put 72(=H)
+LSS S L # Label S
+TLSS # output char from stack
+SLL # discard
+LTS T L # jump to T if the top of the stack is zero
+LSL S L # else, jump back to S
+LSS T L # Label T
